@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/* 헤더, 푸터 공통서식 */
+header{
+	background:#4B4B4B;
+	position:relative;
+}
+
+/* 체크박스 숨기기 */
+#toggle{display:none;}
+
+footer{
+	background:#1c1c1c;
+	position:relative;
+}
+
+footer address{
+	border-top:1px solid #ccc;
+	color:#fff;
+	padding:15px 2%;
+	line-height:14px;
+	font-size:0.7rem;
+}
+
+
+
+/* 체험하기 버튼서식 */
+a.button{
+	font-size: 1rem;
+	background: #fff;
+	padding: 6px 30px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+.button:hover{
+	background: #4b4b4b;
+	color: #fff;
+}
+
+
+/* 가운데 정렬 서식 */
+.align_c{
+	text-align: center;
+}
+
+
+/* 로그인_서브페이지 서식(pc, tablet, mobile 공통) */
+.login{
+	position: relative;
+}
+.login_wrap{
+	width: 320px;
+	margin: 170px auto 10px auto;
+	text-align: center;
+	position: static;
+	left: auto;
+}
+
+
+.login_wrap > legend{
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 60px;
+}
+
+label[for=id_txt], label[for=pw_txt]{
+	display: none;
+}
+
+.login_wrap p{
+	margin-bottom: 10px;
+}
+
+.login_wrap input{
+	width: 312px; height: 50px;
+}
+.login_wrap input[type=checkbox]{
+	width:16px; height: 16px;
+}
+.login_wrap input[type=button]{
+	width: 320px;
+	font-weight: bold;
+	border: none;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+#login_btn{
+	background: #da291c;
+}
+.btn01{background: #0f0;}
+.btn02{
+	background: #ff0; 
+	color: #333!important;}
+
+	/* 태블릿 화면 로그인폼 아래 여백추가 */
+	@media screen and (min-width:768px) and (max-width:1024px) {
+		.login_wrap{
+			padding-bottom: 300px;
+		}
+	}

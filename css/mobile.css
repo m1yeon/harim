@@ -1,0 +1,418 @@
+@charset "utf-8";
+
+/* mobile.css _ 모바일을 기준으로 서식 잡기 _ 그래서 미디어 쿼리 필요없음
+ */
+ /* 중복되는 서식은 pc, table 버전을 만들필요 없음  */
+/*모바일 미디어쿼리 0~767px */
+
+  header{
+    height:60px; 
+  }
+  header h1{
+    width:130px;
+    margin:0px auto;
+    padding-top:5px;
+  }
+  header h1 img{width:100%;}
+
+  .total_btn, .cart_btn{
+    color:#fff;
+    font-size:24px;
+    position:absolute;
+    top:6px;
+    padding:12px;
+  }
+  .total_btn{left:10px;}
+  .cart_btn{right:10px;}
+
+/* h_top서식 */
+.lnb{
+  position:fixed;
+  width:100%;
+  left:-100%;top:400px;
+  z-index:9002;
+  transition:0.5s;
+}
+.lnb > ul{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+.lnb > ul > li{
+  width:44%;
+  margin:0px 2px 4px 2px;
+  text-align:center;
+  background:#686868;
+}
+.lnb > ul > li > a{
+  display:block;
+  line-height:280%;
+  color:#fff;
+}
+
+
+/* h_bottom서식 */
+.h_bottom{}
+.gnb{
+  width:100%;height:100%;
+  position:fixed;
+  left:-100%;top:0px;
+  background:rgba(0, 0, 0, 0.8);
+  z-index:9000;
+  transition:0.5s;
+}
+
+.gnb > ul{
+  padding:100px 1.2%;
+}
+.gnb > ul > li{
+  border-bottom:1px solid #fff;
+  text-indent:20px;
+}
+.gnb > ul > li > a{
+  color:#fff;
+  line-height:280%;
+  display:block;
+}
+.gnb > ul > li > a > i.fa-angle-down{
+  float:right;
+  font-size:1.1rem;
+  padding:6px 8px;
+} 
+
+.sub{display:none;}
+
+.c_btn{
+  color:#fff;
+  font-size:2rem;   /*16px = 1rem;*/
+  position:absolute;
+  right:4%;top:1%;
+  padding:6px;
+}
+
+/* 검색폼 서식 */
+fieldset{
+  position:fixed;
+  width:100%;
+  left:-100%;top:5%;
+  z-index:9001;
+  text-align:center;
+  transition:0.5s;
+}
+fieldset span{display:none;}
+fieldset #search{
+  width:58.97%;
+  height:30px;
+  border-radius:26px;
+  text-align:center;
+  border:none;
+}
+fieldset label.fa-search{
+  font-size:1.3rem;
+  transform:translate(-36px, 4px);
+}
+
+/* toggle클릭시 .lnb, .gnb, fieldset */
+#toggle:checked + header > .h_top > .lnb{
+  left:0%;
+}
+#toggle:checked + header > .h_top > fieldset{
+  left:0%;
+}
+#toggle:checked + header > .h_bottom > .gnb{
+  left:0%;
+}
+
+/* 메인 콘텐츠 서식 */
+main{}
+section:not(.visual){padding: 40px 0px;}
+section:not(.shop, .insta)> h2{display: none;}
+.visual_slide{
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+.visual_slide img{
+  /* width: 329%;  100이상이면 안됨(100%도 안됨) 모바일은 원래 이미지 따로 만들어줘야함*/
+  transform: scale(1);
+  object-fit: contain;
+  object-position:-800px;
+}
+
+/* 2. 사료 무료체험 */
+.free_ex{
+  background:#da291c;
+}
+/* .free_ex > h2{display: none;} */
+
+.free_ex article{
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.free_ex > article > h2{display: none;}
+.free_ex img{
+  width: 70%;
+  margin:0 auto;
+  }
+
+.free_ex_right{
+  color: #fff;
+  padding-bottom: 40px;
+}
+.free_ex_right img{
+  width: 60px;
+  padding-bottom:15px;}
+
+.free_ex_right > h3{
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.free_ex_right > p{
+  font-size: 1rem;
+  line-height: 24px;
+  padding: 25px 0px 25px 0px;
+}
+
+
+/* 3. 쇼핑하러가기 서식 */
+.shop{  overflow: hidden;}
+.shop > h2{
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 200;
+  padding-bottom: 60px;
+  }
+
+.shop > h2 > img{
+  width: 40px;
+  padding-right: 10px;
+  transform:translateY(12px)
+}
+
+
+/* 상품목록서식 */
+.product{
+  padding-top: 40px;
+  width: 160%;
+  display: flex;
+
+}
+
+.product > li{
+  width: 80%;
+}
+
+.product img{
+  width: 40%;
+  float: left;
+}
+
+/* 작은 mobile 영역에서 적용되는 서식 */
+@media screen and (max-width:320px) {
+  .produec > li img{
+    width: 140px;
+  }
+} 
+
+.info{
+  width: 50%;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  float: right;
+}
+
+.info > h3{
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-bottom: 15px;
+}
+
+.info > p{
+  line-height: 150%;
+}
+
+.info > .price{
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #f00;
+  display: inline-block;
+}
+
+.info > p > a.p_button{
+  font-size: 0.8rem;
+	background: #fff;
+	padding: 4px 26px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+.info > p:last-of-type{
+  padding-top: 20px;
+}
+
+/* 4. 펫스토리 서식 */
+.story
+{background: #f7f7f7;}
+
+.story > article{text-align:center;}
+.story > article > h2{display: none;}
+
+.story > article > img{
+  width: 70%;
+  margin:0 auto;
+  border-radius: 10px;
+  }
+
+.story_left{margin-bottom: 20px;}
+.story_left p{
+  font-size: 1rem;
+  line-height: 24px;
+  padding: 10px 0 30px 0;
+}
+.story_left h3{
+  font-size: 1.6rem;
+  font-weight: 200;
+  padding-bottom: 16px;
+}
+
+.story_left img{
+  width: 50px;
+  padding-right: 10px;
+  transform: translateY(8px);
+}
+
+
+/* 05. 인스타그램 서식 */
+section.insta{padding-bottom: 20px;}
+.insta > h2{
+  font-weight: 300;
+  font-size: 1.4rem; /*22.4px*/
+  text-align: center;
+  padding-bottom: 20px;
+}
+.insta > h2 img{
+  transform: translateY(9px);
+}
+
+.insta > h2 > .id_name{
+  font-size: 0.75rem;
+  display: block;
+  line-height: 240%;
+}
+
+/* 6번째 li 뒤의 모든 li태그 숨기기 */
+
+.gallery{
+  display: grid;
+  grid-gap:10px;
+  padding: 10px;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, 150px); 
+}
+
+.gallery > li{
+  overflow: hidden;
+}
+.gallery img{width: 100%;}
+.gallery > li:nth-child(6) ~ li{display: none;}
+
+
+
+/* 푸터서식 */
+  footer{color:#fff;}
+  .f_top{
+    display:flex;
+    height:80px;
+    background:#989898;
+    flex-wrap:wrap;
+    /* 첫째, 막내 순서변경해주는 속성 */
+    /* flex-direction: column-reverse; */
+  }
+  .f_nav{
+    width:100%;
+    order:2;
+    background:#1c1c1c;
+    line-height:280%;
+    text-align:center;
+  }
+  .f_nav a{
+    color:#fff;
+    padding:6px 10px;
+  }
+  .f_top > dl{
+    width:100%;
+    order:1;
+    display:flex;
+    justify-content: space-around;
+    line-height:240%;
+    font-size:0.8rem;
+  } 
+  .f_top > dl a{color:#fff;}
+  .f_top > dl dd:first-of-type{
+    width:60%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .f_top span{padding-left:10px;}
+
+  /* flex속성을 사용하여 자식요소의 순서를 변경하는 방법
+  1. 부모에 flex-direction:column-reverse; 준다
+  2. 자식요소에 order:숫자  (낮은 숫자가 먼저배치 됨)
+   */
+
+  .f_bottom{}
+  .f_bottom > ul{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .f_bottom > ul > li{text-align:center;}
+  /* 주문배송 */
+  .f_bottom > ul > li:first-child{
+    width:50%;
+    order:3;
+  }
+  /* 고객센터 */
+  .f_bottom > ul > li:nth-child(2){
+    order:4;
+    width:50%;
+  }
+  .f_bottom dl{
+    padding:12px 4%;
+    line-height:180%;
+    text-align:left;
+  }
+  .f_bottom dl > dt{
+    font-size:0.9rem;
+  }
+  .info{}
+  .tel > a{
+    color:#fff;
+    font-size:1.6rem;
+  }
+
+/* sns */
+  .f_bottom > ul > li:nth-child(3){
+    order:2;
+    width:100%;line-height:50px;
+  }
+  .f_bottom > ul > li:nth-child(3) i{
+    color:#fff;
+    font-size:1.4rem;
+    padding:5px;
+  }
+  /* 패밀리 사이트 */
+  .f_bottom > ul > li:last-child{
+    order:1;
+    width:100%;line-height:40px;
+  }
+  .f_bottom select{
+    border-radius:3px;
+    width:50%;height:30px;
+  }
+
